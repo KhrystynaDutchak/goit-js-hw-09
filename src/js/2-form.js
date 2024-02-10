@@ -16,6 +16,10 @@ document.addEventListener('DOMContentLoaded', function () {
     form.addEventListener('submit', (e) => {
         e.preventDefault();
 
+        if (!form.email.value.trim() || !form.message.value.trim()) {
+            alert('Please fill in all fields of the form.');
+            return;
+        }
         const formData = {
             email: form.email.value,
             message: form.message.value
